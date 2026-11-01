@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="header">
+            <div>
+                <h1>My Task Manager</h1>
+                <p>Organize your day, one task at a time.</p>
+            </div>
+            <div class="header-icon">✓</div>
+        </header>
+
+        <!-- Task Statistics -->
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Pending</span>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </section>
+
+        <!-- Add Task Form -->
+        <section class="form-section">
+            <h2 id="formHeading">Add New Task</h2>
+
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter task title"
+                    maxlength="80"
+                    required
+                >
+
+                <textarea
+                    id="taskDescription"
+                    placeholder="Enter task description (optional)"
+                    rows="3"
+                ></textarea>
+
+                <div class="form-row">
+                    <select id="taskPriority">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+
+                    <input type="date" id="taskDate">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submitButton">
+                        Add Task
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelEdit"
+                        class="cancel-btn hidden"
+                    >
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="task-section">
+            <div class="task-controls">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search tasks..."
+                >
+
+                <select id="filterTasks">
+                    <option value="All">All Tasks</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <h2>Your Tasks</h2>
+
+            <div id="taskList" class="task-list"></div>
+
+            <p id="emptyMessage" class="empty-message">
+                No tasks found. Add your first task!
+            </p>
+        </section>
+
+        <footer>
+            <p>Task Manager App | Built with HTML, CSS & JavaScript</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
